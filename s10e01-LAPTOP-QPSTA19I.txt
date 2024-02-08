@@ -1,0 +1,95 @@
+==623== Invalid write of size 4: (the dected Error)
+==623==  at 0x109138: main (in /mnt/c/Users/david/OneDrive - uibk.ac.at/Erweiterungsstudium Programming/Informatik/Einführung in die Programmierung/PS/SS2023/ps_eidp_23s-main/ps_eidp_23s-main/10/s10e01_a)
+==623==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+
+bedeutet, dass das Programm versucht hat, 4 Bytes an einer ungültigen Speicheradresse zu schreiben. 
+Der Fehler trat in der Funktion "main" auf und die Adresse 0x0 wurde verwendet, 
+obwohl sie nicht als gültiger Speicherbereich reserviert war.
+
+==623==  Process terminating with default action of signal 11 (SIGSEGV)
+Process terminating with default action of signal 11 (SIGSEGV): 
+Dies zeigt an, dass das Programm aufgrund eines Speicherfehlers abgebrochen wurde. 
+In diesem Fall wurde ein sogenannter Segmentation Fault (Segmentierungsfehler) ausgelöst. 
+Das kann auf einen Zugriff auf ungültigen oder nicht reservierten Speicher hinweisen.
+
+==623==  Access not within mapped region at address 0x0
+not within mapped region at address 0x0: 
+Dies zeigt an, dass das Programm versucht hat, auf eine Speicheradresse zuzugreifen, 
+die nicht im zugeordneten Speicherbereich liegt. 
+In diesem Fall war die Adresse 0x0, was darauf hindeutet, dass das Programm versucht hat, 
+auf einen ungültigen Zeiger oder eine Nullzeigerreferenz zuzugreifen.
+
+==623==  at 0x109138: main (in /mnt/c/Users/david/OneDrive - uibk.ac.at/Erweiterungsstudium Programming/Informatik/Einführung in die Programmierung/PS/SS2023/ps_eidp_23s-main/ps_eidp_23s-main/10/s10e01_a)
+==623==  If you believe this happened as a result of a stack
+==623==  overflow in your program's main thread (unlikely but possible), you can try to increase the size of the
+==623==  main thread stack using the --main-stacksize= flag.
+==623==  The main thread stack size used in this run was 8388608.
+
+==623== HEAP SUMMARY:
+==623==   in use at exit: 0 bytes in 0 blocks
+==623==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+HEAP SUMMARY: Diese Zusammenfassung gibt Informationen über den verwendeten und freigegebenen Heap-Speicher an. 
+In diesem Fall wurden keine Speicherblöcke allokiert oder freigegeben, und es wurden keine Speicherlecks festgestellt.
+
+==623== All heap blocks were freed -- no leaks are possible
+All heap blocks were freed -- no leaks are possible: 
+Diese Meldung zeigt an, dass alle allokierten Speicherblöcke freigegeben wurden und keine Speicherlecks vorliegen.
+
+==623== For lists of detected and suppressed errors, rerun with: -s
+==623== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+
+
+
+
+==653== Invalid write of size 4
+==653==    at 0x10919D: main (in /mnt/c/Users/david/OneDrive - uibk.ac.at/Erweiterungsstudium Programming/Informatik/Einführung in die Programmierung/PS/SS2023/ps_eidp_23s-main/ps_eidp_23s-main/10/s10e01_b)
+==653==  Address 0x4a4f040 is 0 bytes inside a block of size 4 free'd
+==653==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==653==    by 0x109198: main (in /mnt/c/Users/david/OneDrive - uibk.ac.at/Erweiterungsstudium Programming/Informatik/Einführung in die Programmierung/PS/SS2023/ps_eidp_23s-main/ps_eidp_23s-main/10/s10e01_b)
+==653==  Block was alloc'd at
+==653==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==653==    by 0x10917E: main (in /mnt/c/Users/david/OneDrive - uibk.ac.at/Erweiterungsstudium Programming/Informatik/Einführung in die Programmierung/PS/SS2023/ps_eidp_23s-main/ps_eidp_23s-main/10/s10e01_b)
+eldung deutet darauf hin, dass das Programm versucht hat, 4 Bytes an einer ungültigen Speicheradresse zu schreiben. 
+Die Adresse 0x4a4f040 liegt innerhalb eines freigegebenen Speicherblocks, was auf einen möglichen Fehler im Programm hinweist.
+
+==653== HEAP SUMMARY:
+==653==   in use at exit: 0 bytes in 0 blocks
+==653==   total heap usage: 1 allocs, 1 frees, 4 bytes allocated
+total heap usage: 1 allocs, 1 frees, 4 bytes allocated: Diese Zeile gibt Informationen über die Verwendung des Heap-Speichers an. 
+In diesem Fall wurden 4 Bytes allokiert und 1 Speicherblock freigegeben.
+
+==653== All heap blocks were freed -- no leaks are possible
+
+==653== For lists of detected and suppressed errors, rerun with: -s
+==653== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+1 errors from 1 contexts: Dies zeigt an, dass 1 Fehler in 1 Kontext gefunden wurde. 
+Dies könnte auf ein potenzielles Problem im Programm hinweisen.
+
+
+
+
+==659== HEAP SUMMARY:
+==659==   in use at exit: 40 bytes in 1 blocks
+==659==   total heap usage: 2 allocs, 1 frees, 56 bytes allocated
+==659== LEAK SUMMARY:
+==659==    definitely lost: 40 bytes in 1 blocks
+==659==    indirectly lost: 0 bytes in 0 blocks
+==659==      possibly lost: 0 bytes in 0 blocks
+==659==    still reachable: 0 bytes in 0 blocks
+==659==         suppressed: 0 bytes in 0 blocks
+==659== Rerun with --leak-check=full to see details of leaked memory
+definitely lost: 40 bytes in 1 blocks: 
+Diese Meldung deutet darauf hin, dass 40 Bytes in einem allokierten Speicherblock verloren gegangen sind, 
+d.h. es wurde keine Referenz auf diesen Speicherblock gefunden, um ihn später freizugeben. 
+Dies deutet auf ein mögliches Speicherleck hin.
+
+
+
+==659== For lists of detected and suppressed errors, rerun with: -s
+==659== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==760== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==760==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==760==    by 0x1091A4: main (in /mnt/c/Users/david/OneDrive - uibk.ac.at/Erweiterungsstudium Programming/Informatik/Einführung in die Programmierung/PS/SS2023/ps_eidp_23s-main/ps_eidp_23s-main/10/s10e01_c)
+

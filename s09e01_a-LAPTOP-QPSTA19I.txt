@@ -1,0 +1,41 @@
+1. Die Definition für eine Struktur mit einer Komponente vom Datentyp unsigned short und einer Komponente vom Datentyp float lautet:
+struct example_struct_1 {
+    unsigned short my_short;
+    float my_float;
+};
+
+
+
+2. Die Definition für eine Struktur mit einer Komponente vom Datentyp unsigned und einer Komponente vom Datentyp int, wobei der unsigned Wert 4 Bits und der int 2 Bits breit sein soll, lautet:
+
+struct example_struct_2 {
+    unsigned my_unsigned : 4;
+    int my_int : 2;
+};
+
+
+
+3. Die Definition für eine Struktur mit einer Komponente vom Datentyp double und einer anonymen union, die eine Komponente vom Datentyp int, eine Komponente vom Datentyp float und eine Komponente vom Datentyp double beinhaltet, lautet:
+
+struct example_struct_3 {
+    double my_double;
+    union {
+        int my_int;
+        float my_float;
+        double my_other_double;
+    };
+};
+
+
+
+4. Die Definition für eine Struktur list, welche eine Komponente namens size vom Datentyp int und eine Komponente head als Zeiger auf eine Struktur node enthält. Die Struktur node enthält eine Komponente value vom Datentyp double und eine Komponente next als Zeiger auf die Struktur node, lautet:
+
+struct node {
+    double value;
+    struct node *next;
+};
+
+struct list {
+    int size;
+    struct node *head;
+};

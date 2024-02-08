@@ -1,5 +1,1 @@
-add_executable(s08e02 s08e02.c)
-add_executable(s08e03 s08e03.c)
-add_executable(s08e04 s08e04.c)
-add_executable(s08e05 s08e05.c)
-add_executable(s08e06 s08e06.c)
+add_executable(s13e01 s13e01.c)

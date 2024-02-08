@@ -1,0 +1,10 @@
+
+my_struct1 enthält ein float und ein double, mit 12 Bytes (4 Bytes für float + 8 Bytes für double);
+my_struct2: zwei float und ein double, mit 16 Bytes (2 x 4 Bytes für float + 8 Bytes für double);
+my_struct3: ein float, ein double und wieder ein float, mit 16 Bytes (4 Bytes für float + 8 Bytes für double + 4 Bytes für float);
+
+
+Output is: 
+size of my_struct1: 12
+size of my_struct2: 16
+size of my_struct3: 16

@@ -1,0 +1,49 @@
+Codeausschnitt 1:
+char *array = malloc(16 * sizeof(*array));
+-> reserviert Speicher für ein Array mit einer Größe von 16 Elementen des Typs char.
+
+
+Codeausschnitt 2:
+short a = 3;
+printf("%d\n", ((a) <= ('2') ? (a) : ('2')) <= (5) ? ((a) <= ('2') ? (a) : ('2')) : (5)); // 3 output
+printf("%f\n", ((4.0) <= (1.0) ? (4.0) : (1.0)));                                         // 1.000000 output
+-> Makro MIN kann durch eine Funktion min mit der Signatur float min(float x, float y) ersetzt werden,
+ohne sonstige Änderungen im Codeausschnitt durchzuführen. 
+Das Makro MIN wird durch die Funktion min ersetzt, 
+und die Ausdrücke (x) <= (y) ? (x) : (y) werden entsprechend zu min(x, y) umgewandelt.
+
+
+Codeausschnitt 3:
+printf("%d\n", 2 + 2 * 2 + 2);
+-> auf der Standardausgabe die Zahl 8 ausgegeben.
+
+
+Codeausschnitt 4:
+int var60 = 50;
+int var50 = 60;
+printf("var60 = %d\n", var60);
+-> auf der Standardausgabe die Zeichenkette "var60 = 50" ausgegeben.
+-> Operator # (Stringifizierungsoperator) konvertiert den darin enthaltenen Text in einen String-Literal. 
+Wenn er vor einer Makro-Argumentenreferenz (#n) verwendet wird, wird das Argument als Zeichenkette interpretiert.
+-> Operator ## (Token-Zusammenfügungsoperator) ermöglicht das Zusammenfügen von Tokens. 
+Er wird verwendet, um zwei benachbarte Tokens in einem einzigen Token zu verbinden.
+
+
+Codeausschnitt 5:
+#ifdef DEBUG
+    printf("My debug messages\n");
+#endif
+printf("My debug messages\n"); //nach präprozessordurchläufen wenn DEBUG definiert ist ; 
+keine Ausgabe nach Präprozessordurchlauf, da der gesamte Code innerhalb des #ifdef DEBUG-Blocks ausgeblendet wird, wenn DEBUG nicht definiert 
+
+Codeausschnitt 6:
+int x = 12;
+int y = 61;
+printf("DEBUG: " "x = %d, y = %d\n", x, y);
+
+-> Variadisches Makro: akzteptiert & verarbeitet eine variable Anzahl von Argumenten, im Gegensatz zu normalen Makros, eine feste Anzahl von Argumenten.
+
+-> Um variadisches Makro zu definieren: spezielle Token "..." als Parameterliste des Makros verwendet. 
+-> Innerhalb des Makros können Argumente mithilfe des speziellen Makro __VA_ARGS__ referenziert werden. 
+-> Dieses Makro wird während des Präprozessorschritts durch die übergebenen Argumente ersetzt.
+-> DEBUG_PRINT ist variadisches Makro, da die spezielle ...-Syntax verwendet. ermöglicht das Übergeben einer beliebigen Anzahl von Argumenten für die Formatierung der Ausgabe.

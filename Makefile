@@ -3,17 +3,13 @@ CFLAGS=-Wall -Werror -Wextra -Wpedantic -std=c18
 
 .PHONY: all clean
 
-all: s08e03 s08e04.c s08e05 s08e06
+all: s10e02 s10e03 s10e04
 
-s08e03: s08e03.c
+s10e02: s10e02.c
 
-LDLIBS=-lm
+s10e03: s10e03.c
 
-s08e04: s08e04.c
-
-s08e05: s08e05.c
-
-s08e06: s08e06.c
+s10e04: s10e04.c
 
 clean:
-	rm s08e03 s08e04 s08e05 s08e06
+	rm s10e02 s10e03 s10e04

@@ -1,0 +1,59 @@
+1. 
+-> my_struct1 können wir die Größe wie folgt berechnen:
+a ist ein Array aus 4 Floats, jeder Float benötigt 4 Bytes. Die Gesamtgröße von a ist 4 * 4 = 16 Bytes.
+b ist ein Array aus 8 Chars, jeder Char benötigt 1 Byte. Die Gesamtgröße von b ist 8 Bytes.
+c ist ein Double, der 8 Bytes benötigt.
+Insgesamt benötigt my_struct1 also mindestens 32 Byte (16 + 8 + 8).
+
+-> my_struct2 können wir die Größe wie folgt berechnen:
+a ist ein Int32_t, der 4 Bytes benötigt.
+b ist ein Double, der 8 Bytes benötigt.
+c ist ein Float, der 4 Bytes benötigt.
+Insgesamt benötigt my_struct2 also mindestens 16 (4 + 8 + 4) Bytes.
+
+-> my_struct3 können wir die Größe wie folgt berechnen:
+a ist ein Int32_t, der 4 Bytes benötigt.
+my_struct4 enthält einen Int64_t (8 Bytes) und einen uint16_t (2 Bytes), insgesamt 10 Bytes.
+b ist my_struct2, die bereits als 16 Bytes berechnet wurde.
+Insgesamt benötigt my_struct3 also mindestens 30 (4 + 10 + 16) Bytes.
+
+Größe einer C-Struktur hängt von der Größe der in ihr enthaltenen Datentypen und der Speicherausrichtung des Systems ab. 
+Die Speicherausrichtung kann je nach System unterschiedlich sein, daher kann die tatsächliche Größe 
+einer Struktur auf unterschiedlichen Systemen variieren.
+
+Es ist jedoch möglich, die minimale Größe der Strukturen unter der Annahme zu berechnen, dass 
+das System die 1-Byte-Speicherausrichtung verwendet (d. h. jedes Element wird auf einer Byte-Grenze platziert).
+
+
+
+2. 
+-> my_union1: Der maximale Speicherbedarf in der Union wird durch das Feld b bestimmt, das aus einem Array von 8 chars besteht. 
+Ein char hat normalerweise eine Größe von 1 Byte, daher hat my_union1 einen minimalen Speicherbedarf von 8 Byte.
+
+-> my_union2: Da double normalerweise 8 Bytes benötigt, bestimmt dieses Feld den maximalen Speicherbedarf von my_union2. 
+Der minimale Speicherbedarf ist jedoch durch das kleinste Feld bestimmt, das int32_t verwendet. 
+Ein int32_t hat normalerweise eine Größe von 4 Byte, daher hat my_union2 einen minimalen Speicherbedarf von 8 Byte.
+
+-> my_union3: Die minimale Größe von my_union3 wird durch das kleinste Feld bestimmt, das ein int32_t ist und 
+normalerweise 4 Bytes benötigt. my_union3 hat daher einen minimalen Speicherbedarf von 4 Byte.
+
+Anzumerken ist, dass die tatsächliche Größe der Union von der Ausrichtung und der Speicherarchitektur abhängt. 
+Die berechneten Größen geben lediglich einen Hinweis darauf, was die minimale Größe in Byte sein sollte.
+
+
+
+3. 
+-> Um auf den Wert value von node1 über die Variable node1 zuzugreifen, können wir einfach den Punktoperator . verwenden:
+int node1_value = node1.value;
+
+-> Um auf den Wert value von node1 über die Variable node3 zuzugreifen, können wir den Pfeiloperator -> verwenden, um auf 
+den linken Unterbaum von node3 zuzugreifen und dann den Punktoperator . verwenden, um auf das value-Feld von node1 zuzugreifen:
+int node1_value_via_node3 = node3.left->value;
+
+-> Um auf die Komponente value der Struktur struct tree_node über den Zeiger ptr zuzugreifen, können wir 
+ebenfalls den Punktoperator . verwenden, müssen aber zuerst den Zeiger dereferenzieren, um auf das Zielobjekt zuzugreifen:
+int node1_value_via_ptr = ptr->value;
+
+-> Eine alternative Syntax zur Verwendung des Pfeiloperators wäre die Verwendung von Klammern, um die 
+Priorität des Pfeiloperators zu erhöhen:
+int node1_value_via_ptr_alt = (*ptr).value;
