@@ -1,0 +1,22 @@
+| Nummer | Literal  | C-Datentyp                | Dezimalwert |
+|-------:|:---------|:--------------------------|------------:|
+|      1 | 25       |  int                      |  25         |
+|      2 | 3e3L     |  long int                 |  3000       |
+|      3 | 7L       |  long int                 |  7          |
+|      4 | 54102    |  int                      |  54102      |
+|      5 | 0.425    |  double                   |  0.425      |
+|      6 | 9.L      |  long double              |  9          |
+|      7 | 0xBull   |  unsigned long long (hexa)|  11         |
+|      8 | 084      |  int (oct)                |  84         |
+|      9 | 'A'      |  char                     |65 (ASCII)   |
+|     10 | 0xcoffee |  ungültig                 |  -          |
+|     11 | 3.21f    |  float                    |  3.21       |
+|     12 | 034      |  int (oct)                |  34         |
+|     13 | 6e-3     |  double                   |  0.006      |
+|     14 | '\n'     |  char                     |10 (ASCII)   |
+|     15 | 0xcafe   |  int (hexa)               |  51966      |
+|     16 | 0.3      |  double                   |  0.3        |
+|     17 | 63u      |  unsigned int             |  63         |
+|     18 | .2f      |  float                    |  -          |
+|     19 | 0xFL     |  long int (hexa)          |  15         |
+|     20 | '9'      |  char                     |  57 (ASCII) |

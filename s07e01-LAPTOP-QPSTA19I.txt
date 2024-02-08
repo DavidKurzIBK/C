@@ -1,0 +1,81 @@
++-----------------+----------------+-------------+-------------+-------------+
+| Speicheradresse | Inhalt (Binär) |    Variable |    Datentyp | Dezimalwert |
++-----------------+----------------+-------------+-------------+-------------+
+|             ... |            ... |         ... |         ... |         ... |
++-----------------+----------------+-------------+-------------+-------------+
+|              30 |       00011010 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|              31 |       01100001 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|              32 |       00101000 |         pe  |     long int|         40  |
++-----------------+----------------+-------------+-------------+-------------+
+|              33 |       00101100 |       *ppf |       int*  |           44 |
++-----------------+----------------+-------------+-------------+-------------+
+|              34 |       01100011 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|              35 |       00111110 |           b |         int |          62 |
++-----------------+----------------+-------------+-------------+-------------+
+|              36 |       01100000 |         *pd |         int |          96 |
++-----------------+----------------+-------------+-------------+-------------+
+|              37 |       01101001 |       *pc   |     int     |         105 |
++-----------------+----------------+-------------+-------------+-------------+
+|              38 |       00011011 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|              39 |       01011011 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|              40 |       01111010 |         *pe |    long int |    31248    | Höherwertige Byte *pe -> 31248
+|              41 |       00010000 |             |             |             | Niederwertiges Byte ... beide zusammen: 0111101000010000
++-----------------+----------------+-------------+-------------+-------------+
+|              42 |       00010111 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|              43 |       00100001 |      ppf    |      int**  |       33    |
++-----------------+----------------+-------------+-------------+-------------+
+|              44 |       00000001 |      **ppf  |      int    |        1    |
++-----------------+----------------+-------------+-------------+-------------+
+|              45 |       00001111 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|              46 |       00100100 |          pd |         int*|          36 |
++-----------------+----------------+-------------+-------------+-------------+
+|              47 |       01101011 |           a |         int |         107 |
++-----------------+----------------+-------------+-------------+-------------+
+|              48 |       00100101 |          pc |         int*|         37  |
++-----------------+----------------+-------------+-------------+-------------+
+|              49 |       00011001 |             |             |             |
++-----------------+----------------+-------------+-------------+-------------+
+|             ... |            ... |         ... |         ... |         ... |
++-----------------+----------------+-------------+-------------+-------------+
+
+
+
+1. Die Variable int a liegt auf Speicheradresse 47.
+- Inhalt der Speicheradresse 47 ist 01101011 (in Binär).
+- Dezimalwert berechnen: Binärwert in Dezimal umwandeln: 01101011 entspricht 107 in Dezimal.
+- printf("%d", a) gibt 107 aus.
+
+2. Der Befehl printf("%d", b) gibt 62 aus.
+- Der Befehl printf("%p", &b) gibt die Speicheradresse '35' von b aus. (Speicheradresse des operaten bestimmt) 
+- & operator ist unär: Bezeichner einer Fkt / Variable & ergebnis von Arrayzugriff
+
+3. Der Zeiger int *pc liegt auf Speicheradresse 48.
+- Inhalt der Speicheradresse 48 ist 00100101 (in Binär).
+- 00100101 entspricht 37 in Dezimal.
+- Zeiger pc verweist auf Speicheradresse 37 (Dezimalwert).
+- Der Befehl printf("%p", &pc) gibt die Speicheradresse von pc aus.
+- Der Befehl printf("%d", *pc) gibt Inhalt der Speicheradresse, auf die pc verweist, aus. Inhalt der Speicheradresse 37 ist 01101001 (in Binär). 
+- 01101001 entspricht 105 in Dezimal. 
+- Daher printf("%d", *pc) den Wert 105 aus.
+
+4. Gegeben sei der Zeiger int *pd. Der Befehl printf("%d", *pd) gibt 96 aus.
+- der Zeiger pd verweist auf die Speicheradresse 36. 
+- der Zeiger liegt auf Speicheradresse 46
+
+5. Der Zeiger long int *pe liegt auf der Speicheradresse 32.
+- long int hier 16 Bit (normal 32 Bit)
+- er verweist auf Speicherbereich 32 bis 48 
+- der Befehl printf("%ld", *pe) gibt 122 aus
+
+6. **pf (ein Zeiger auf den Zeiger) und liegt auf Speicheradresse 43
+- printf("%p", &ppf) gibt Speicheradresse 43 aus
+- printf("%p", ppf) gibt den Inhalt der Speicheradresse 43: 00100001 in Dezimal: 33
+- printf("%p", *ppf) gibt den Inhalt der Speicheradresse 33: 00101100 in Dezimal: 44
+- printf("%p", **ppf) gibt den Inhalt der Speicheradresse 44: 00000001 in Dezimal: 1

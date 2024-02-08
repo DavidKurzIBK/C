@@ -1,0 +1,20 @@
+1. max_xy = (x > y) ? x : y
+Maximum der Werte der int-Variablen x und y mit Bedingungsoperator "?"
+Bedingung x > y ausgewerten, wenn wahr wird x zurückgegeben, andernfalls y.
+
+
+2. min_xy = (x < y) ? x : y 
+Minimum der Werte der int-Variablen x und y mit Bedingungsoperator "?"
+Bedingung x < y ausgewerten, wenn wahr wird x zurückgegeben, andernfalls y.
+
+
+3. sign_x = x > 0 ? 1 : (x == 0 ? 0 : -1)
+Signum des Werts der int-Variable x mit Bedingungsoperator "?"
+x > 0 wahr: 1 zurückgegeben, da x positiv. 
+x > 0 falsch: wenn x gleich 0, wird 0 zurückgegeben. 
+andernfalls x negativ, wird -1 zurückgegeben. 
+
+4. abs_x = x >= 0 ? x : -x
+Absolutbetrag des Werts der int-Variable |x| mit Bedingungsoperator "?"
+wenn x >= 0 wahr, wird x zurückgegeben, 
+andernfalls wird -x zurückgegeben

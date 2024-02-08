@@ -1,0 +1,66 @@
+## a)
+
+| Ausdruck                                     | C-Datentyp                 |
+|:---------------------------------------------|:---------------------------|
+| 0.2 == 0.2f                                  |double==float->logical(no)  |
+| 4U == (2U << 1U)                             |unsigned int==left bitshift->logical(true)|
+| 0xcad                                        |hexadezimal (3245 in dezimal)|
+| (2 * 5) / 3.0                                |(int) / double -> double    |
+| ((float) 6.0) / 4                            |float-cast.opera/int->float |
+| 0XFULL + 'a'                                 |hexa unsign lon lon (dez. 15) + char (97 ascii) -> unsign lon lon|
+| 'E' * 'i' + 'd' + 'P'                        |char (ascii 69 * 105 + 100 + 80 = 7425)->int|
+| (8.0 * 0x10) * (((4U <<   2U) + 10L) * 5.0f) |(double*hexa)*(left-bitshift+long*float)->float|
+| (UINT_MAX + 1) & 0xF                         |(unsign_int_max-überlauf->modulo-arithm->0) bitwise AND (hexadez (dez 15)) -> unsign int|
+| 12U | ((6L ^ 4) & 13LL)                      |unsign int bitwise | ((lon int) bitwise & lon lon int) -> unsign int
+
+
+## b)
+
+| Ausdruck                  | Resultat (Basis 10 (dez.)  |
+|:--------------------------|:---------------------------|
+| 0x10                      |hexa: 1*10 + 0*16 = 16      |
+| 'Z' - 'A'                 |ascii: 90 - 65 = 25         |
+| (5U << 1U) == (13 ^ 7)    |(left bitshif of unsign int->10->binär1010)==XOR-Oper.auf 13 und 7->10->binär 1010=1 oder wahr   |
+| (UINT_MAX + 2U) + 1       |unsingn int max-Überlauf-> -1 + 1 = 0|
+| 3.0 + 1 - 4 / 2           |double & int: 2.0 (double)  |
+
+
+
+## c)
+
+1.
+Ausdruck: 0.1f + 0.1f == 0.2
+Resultat (Basis 10): falsch bzw. 0
+Erklärung: 2 binäre Gleitkommazahlen als float werden addiert. jene können nicht vollständig dargestellt werden (unendlich)
+somit kann es prinzipiell zu Rundugsfehlern kommen. deswegen kann es sein das das Ergebnis falsch bzw. 0 ist.
+
+
+
+
+2.
+Ausdruck: 0.1 - 0.1f == 0
+Resultat (Basis 10): falsch bzw. 0  
+Erklärung: eine double in binäre deimalzal umgewandelt ergibt unendliche binäre Dezimalzahl. Davon eine float (unendlich)
+also auch nicht vollständig darstellbar führt zum Ergebnis welches nicht genau 0 ist
+
+
+## d)
+
+1.
+Ausdruck: 5 * 2 + 1 == 4 && 2 + 1 > 3
+Ausdruck mit vollständiger Klammerung: logische && operator hat höchste priorität. Ergebnis ist falsch
+((5 * 2 + 1) == 4) && ((2 + 1) > 3)
+(10 == 4) && (3 > 3) -> false && false -> false;
+
+2.
+Ausdruck: x >= 'a' && x <= 'z' || x >= 'A' && x <= 'Z'
+Ausdruck mit vollständiger Klammerung: logische && operator und ||  haben gleiche priorität.
+((x >= 'a') && (x <= 'z')) || ((x >= 'A') && (x <= 'Z')) ... ASCII-Code wird verglichen
+
+
+
+3.
+Ausdruck: 1 * 2 / 3 % 4 * 5 / 6
+Ausdruck mit vollständiger Klammerung: alle ausdrücke haben gleich hohe priorität
+((1 * 2) / 3) % (4 * (5 / 6))
+(2 / 3) % (10 / 3) -> 0

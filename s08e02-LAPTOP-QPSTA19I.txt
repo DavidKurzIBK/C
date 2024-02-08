@@ -1,0 +1,29 @@
+| Nummer | Ausgabe              | Erklärung   |
+|--------|----------------------|-------------|
+|      1 |                    4 |             |
+|      2 |                    9 |             |
+|      3 |                    1 |             |
+|      4 |                    1 |             |
+|      5 |                    0 |             |
+|      6 |                    10|             |
+
+
+Das Programm initialisiert ein char-Array namens values mit den Zeichen von '0' bis '9'. 
+Anschließend werden zwei Pointer p1 und p2 definiert. 
+p1 zeigt auf das erste Element von values und p2 zeigt auf das letzte Element von values.
+
+Die Ausgabe "4" erklärt sich dadurch, dass p1 + 4 auf das fünfte Element von values zeigt, welches die Zahl '4' ist.
+
+Die Ausgabe "0" erklärt sich dadurch, dass *p2 auf das erste Element von values zeigt, welches die Zahl '0' ist.
+
+Die Ausgabe "1" erklärt sich dadurch, dass p1 auf das erste Element von values zeigt, welches eine niedrigere 
+Speicheradresse hat als das letzte Element, auf das p2 zeigt.
+
+Die Ausgabe "1" erklärt sich dadurch, dass p1 + 2 auf das dritte Element von values zeigt, welches eine niedrigere 
+Speicheradresse hat als p2 - 4, das auf das sechste Element von values zeigt.
+
+Die Ausgabe "1" erklärt sich dadurch, dass ((int32_t *)p1) + 2 auf den dritten Vier-Byte-Block von values zeigt, 
+der eine niedrigere Speicheradresse hat als (int32_t *)(p2 - 4), das auf den vorletzten Vier-Byte-Block von values zeigt.
+
+Die Ausgabe "10" erklärt sich dadurch, dass p2 - p1 die Anzahl der Elemente zwischen p1 und p2 ist, also die Länge des Arrays values. 
+Da das Array zehn Elemente hat, beträgt die Ausgabe "10".
