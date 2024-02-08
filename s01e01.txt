@@ -1,0 +1,34 @@
+
+
+1. gcc ist ein Compiler in C, der C-Programme in Maschinencode übersetzt. 
+
+
+2. auf meinem Rechner ist die gcc Version 9.4.0 installiert. 
+Mit dem Befehl gcc -v im Terminal aufrufbar
+
+
+4. neueste Version: gcc 12.2 
+
+
+5. -> C-Quellcode ist lesbar als Mensch, und muss mit Compiler in einen 
+maschinen lesbaren code übersetzt werden.
+
+-> Ein executable kann von betriebsystem (linux, windows, mac) direkt 
+ausgeführt werden. Es ist in binar maschinencode und enthält Daten, text 
+und runtime info
+
+
+6. die Maschine kennt keine Befehle der höheren Programmiersprache, hier C. 
+Coompiler notwendig um diese Sprache in Maschinensprache zu übersetzen.
+
+
+7. -Wall: schaltet großteil nützlicher Warnungen ein
+-Wextra: aktiviert zusätzliche Warnungen
+-Werror: wandelt Fehler in Warnungen um
+-Wpendanic: aktiviert zusätzliche Warnungen vom angegebenen ISO C-Standard
+-std=c18: spezifikation des ISO C-Standards
+s01e01.c -o s01e01 erzeugt das ausführbare Programm
+
+
+8. mit dem Befehlseingabe im Terminal ./s01e01 kann die kompilierte Datei 
+ausgeführt werden
